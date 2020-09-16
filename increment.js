@@ -1,18 +1,18 @@
 function increment(number) {
-  let ret = 1;
+  let carry = 1;
 
   for (let i = number.length - 1; i >= 0; i--) {
     if (number[i] + 1 === 10) {
       number[i] = 0;
-      ret = 1;
+      carry = 1;
     } else {
       number[i]++;
-      ret = 0;
+      carry = 0;
       break;
     }
   }
 
-  if (ret) number.unshift(ret);
+  if (carry) number.unshift(carry);
 
   return number;
 }
